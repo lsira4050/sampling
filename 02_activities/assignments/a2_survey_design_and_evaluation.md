@@ -40,25 +40,67 @@ For the **Canadian General Social Survey on Giving, Volunteering, and Participat
 
 ## Part A - Survey Design: 
 
-The number of your chosen topic: `#`
+The number of your chosen topic: `2`
 
 Describe the purpose of your survey:
 ```
-write your answer here...
+This survey aims to identify key policy priorities and leadership qualities that potential voters value most with one month remaining before the federal election. The results will help our political party refine messaging, prioritize campaign issues, and highlight leadership strengths to maintain our lead and secure victory in the upcoming election.
 ```
 
 Describe your target population, sampling frame, sampling units, and observational units:
 ```
-write your answer here...
-```
+Target population: Canadian citizens eligible to vote in the upcoming federal election.
+Sampling frame: Registered voter lists supplemented with random-digit dialing to reach cell-phone-only households.
+Sampling units: Individual eligible voters across all Canadian provinces and territories.
+Sampling strategy: Stratified random sampling with strata based on geographic regions (provinces/territories) and population density (urban/rural), with additional quota sampling to ensure adequate representation across age groups, gender, and ethnicity that matches the Canadian electorate. Oversampling will be conducted in highly competitive electoral districts.```
 
 Your 5-10 question survey:
 ```
-1. write your question here...
-2. write your question here...
-3. write your question here...
-4. write your question here...
-5. write your question here...
+1. How likely are you to vote in the upcoming federal election? (Select one)
+   □ Definitely will vote
+   □ Probably will vote
+   □ Might or might not vote
+   □ Probably will not vote
+   □ Definitely will not vote
+2. Which of the following issues will most influence your voting decision? (Select up to three)
+   □ Healthcare
+   □ Economy and jobs
+   □ Climate change and environment
+   □ Housing affordability
+   □ Cost of living/inflation
+   □ Immigration policy
+   □ National security
+   □ Indigenous reconciliation
+   □ Education
+   □ Other (please specify): _______
+3. When thinking about our party leader, which qualities do you find most appealing? (Select up to two)
+   □ Experience and competence
+   □ Trustworthiness
+   □ Vision for Canada's future
+   □ Personal charisma
+   □ Ability to represent Canada internationally
+   □ Policy positions
+   □ None of the above
+   □ Not familiar enough with the leader
+4. Which of the following policy positions would make you more likely to vote for our party? (Select all that apply)
+   □ Increased healthcare funding
+   □ Tax cuts for middle-class families
+   □ Stronger environmental regulations
+   □ More affordable housing initiatives
+   □ Increased defense spending
+   □ Support for small businesses
+   □ Enhanced social programs
+   □ Indigenous rights and reconciliation
+   □ Other (please specify): _______
+5. Which aspect of our party's campaign message has resonated with you the most? (Select one)
+   □ Economic plan
+   □ Healthcare initiatives
+   □ Environmental policies
+   □ Social justice commitments
+   □ Leadership qualities
+   □ Vision for Canada's future
+   □ None have resonated with me
+   □ I'm not familiar with the campaign messaging
 6. write your question here... (optional)
 7. write your question here... (optional)
 8. write your question here... (optional)
@@ -71,8 +113,37 @@ Your 5-10 question survey:
 Identify and describe survey features:
 
 ```
-write your answer here
-```
+1. Sample type: The survey used a multi-stage stratified sampling design. The sample was drawn from respondents who completed the 2016, 2017, and 2018 iterations of the Labour Force Survey (LFS), creating a complex probability sample.
+
+2. Sample size: The final sample size was 16,149 respondents.
+
+3. Target population: The target population included all persons 15 years of age and over living in Canada's ten provinces, excluding full-time residents of institutions and persons living on reserves.
+
+4. Sampling frame: The sampling frame was derived from the Labour Force Survey (LFS) sample, which uses an area frame and a list frame. The frame consisted of households that had recently completed their participation in the LFS, specifically those from 2016, 2017, and 2018 LFS sample rotations.
+
+5. Survey mode(s): Data was collected through computer-assisted telephone interviewing (CATI) and electronic questionnaires (EQ).
+
+6. Timeline: Data collection occurred over a period of approximately 4 months from September 2018 to December 2018.
+
+7. Response rate: The overall response rate was 53.1%.
+
+8. Weights: The survey data included survey weights to account for unequal probabilities of selection and to adjust for non-response. The weighting process involved several adjustments including household-level and person-level adjustments to ensure the sample accurately represented the target population.
+
+9. Data processing: Data underwent extensive processing including verification of skip patterns, coding of "other-specify" responses, and derivation of composite variables based on multiple questions. Industry and occupation responses were coded using standard Statistics Canada classifications.
+
+10. Cleaning, imputation, etc.: The dataset underwent consistent editing to identify and resolve errors, outliers, and inconsistencies. Missing data for key variables underwent imputation to reduce potential biases, with different imputation methods used depending on the nature of the data.
+
+11. Sources of error: The survey is subject to both sampling and non-sampling errors. Sampling errors arise because inferences about the population are based on sample data. Non-sampling errors include coverage errors (under-representation of certain groups), measurement errors (respondent misunderstanding questions), non-response bias, and processing errors.
+
+12. Limitations, known biases, etc.: Known limitations include:
+    - Exclusion of territories and institutional populations
+    - Potential recall bias for retrospective questions about volunteering and giving
+    - Social desirability bias (respondents may overreport socially desirable behaviors)
+    - Under-representation of certain demographic groups, particularly younger adults
+    - The volunteer rate estimate may be affected by methodology changes compared to previous cycles
+
+13. Link to documentation: https://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=4430
+    Additional sources: Statistics Canada. (2020). General Social Survey – Giving, Volunteering and Participating (GSS GVP) – 2018: Technical Guide to the Public Use Microdata File.```
 
 ## Rubric
 
