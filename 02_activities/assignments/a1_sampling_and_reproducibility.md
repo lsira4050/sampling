@@ -10,11 +10,60 @@ Modify the number of repetitions in the simulation to 100 (from the original 100
 
 Alter the code so that it is reproducible. Describe the changes you made to the code and how they affected the reproducibility of the script file. The output does not need to match Whitby’s original blogpost/graphs, it just needs to produce the same output when run multiple times
 
-# Author: YOUR NAME
+# Author: Laura Siracusa
 
 ```
 Please write your explanation here...
+The `whitby_covid_tracing.py` script implements a simulation of COVID-19 infection and contact tracing across two different types of events: weddings and brunches. After careful analysis, I identified the following sampling stages in the model:
 
+1. **Event Type Assignment**:
+   - Function: Initial setup in `simulate_event()`
+   - Sample size: Fixed at 1000 people total (200 for weddings, 800 for brunches)
+   - Sampling frame: N/A (deterministic assignment)
+   - Distribution: Fixed 1:4 ratio of wedding:brunch attendees
+   - This reflects the blog post's scenario of different types of gatherings with varying attendance sizes
+
+2. **Initial Infection Sampling**:
+   - Function: `np.random.choice()` in `simulate_event()`
+   - Sample size: 10% of the population (100 people) determined by `ATTACK_RATE = 0.10`
+   - Sampling frame: All 1000 individuals
+   - Distribution: Uniform (simple random sampling without replacement)
+   - This models the random spread of infection with the same attack rate across both event types
+
+3. **Primary Contact Tracing Sampling**:
+   - Function: `np.random.rand()` comparison in `simulate_event()`
+   - Sample size: Approximately 20% of infected individuals, per `TRACE_SUCCESS = 0.20`
+   - Sampling frame: Only infected individuals
+   - Distribution: Bernoulli trials (binomial distribution)
+   - This represents the random success of contact tracing for individual cases
+
+4. **Secondary Contact Tracing**:
+   - Function: Conditional logic in `simulate_event()`
+   - This is not true random sampling but a deterministic process
+   - If an event has at least 2 traced cases (`SECONDARY_TRACE_THRESHOLD = 2`), all infected people at that event are marked as traced
+   - This models the "cluster identification" described in the blog post, where events with multiple cases get more attention
+
+5. **Repetition Sampling**:
+   - Function: List comprehension calling `simulate_event()` multiple times
+   - Sample size: 1000 independent simulation runs
+   - This creates a distribution of outcomes to analyze the statistical properties of the model
+
+The simulation demonstrates how selective contact tracing can create a biased picture of infection sources, just as described in the blog post. While both event types have the same infection rate (10%), the smaller weddings are more likely to be fully contact-traced due to the secondary tracing threshold, leading to an overrepresentation of wedding cases in the traced dataset.
+
+**Reproducibility Analysis**
+
+When running the original script multiple times, I observed that the results vary between runs. This non-reproducibility occurs because the script uses random number generation without setting a fixed seed. Specifically:
+
+1. The infection process uses `np.random.choice()` to randomly select which individuals become infected
+2. The primary contact tracing uses `np.random.rand()` to determine which infected individuals are traced
+
+When changing the simulation runs from 1000 to 100, the non-reproducibility becomes even more apparent as there's greater variability in the histograms between runs due to smaller sample size.
+
+**Code Modifications for Reproducibility**
+
+To make the code reproducible, I added a fixed random seed at the beginning of the script:
+# Set a fixed random seed for reproducibility
+np.random.seed(42)
 ```
 
 
